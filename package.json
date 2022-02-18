@@ -1,0 +1,28 @@
+{
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
+    "@tailwindcss/aspect-ratio": "^0.3.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/line-clamp": "^0.2.2",
+    "@tailwindcss/typography": "^0.4.1",
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.3",
+    "react-dom": "^17.0.2",
+    "sqlite": "^4.0.23"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "eslint": "8.8.0",
+    "eslint-config-next": "12.0.9",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
+  }
+}
