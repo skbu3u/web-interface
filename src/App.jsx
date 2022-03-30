@@ -1,32 +1,27 @@
 import React, { useState } from "react";
 import Login from "./components/Login/Login";
-import Home from "./components/Home/Home";
-import {MainHeader} from "../src/components/Login/MainHeader"
+import {BrowserRouter as Router} from 'react-router-dom';
+import Layout from "./components/Layout/Layout";
 
-function App() {
+export const setToken = (token)=>{
+  localStorage.setItem('temitope', token)
+}
+
+export const fetchToken = (token)=>{
+  return localStorage.getItem('temitope')
+}
+function App({children}) {
+  let auth = fetchToken()
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // useEffect(() => {
-  //   const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
-  //   if (storedUserLoggedInInformation === "1") setIsLoggedIn(true);
-  // }, []);
-
-  const loginHandler = (email, password) => {
-    localStorage.setItem("isLoggedIn", "1");
-    setIsLoggedIn(true);
-  };
-
-  const logoutHandler = () => {
-    localStorage.removeItem("isLoggedIn");
-    setIsLoggedIn(false);
-  };
   return (
     <>
-      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+    <Router>
       <main>
-        {!isLoggedIn && <Login onLogin={loginHandler} />}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
+        {!auth && <Login/>}
+        {auth && <Layout/>}
       </main>
+    </Router>
     </>
   );
 }
