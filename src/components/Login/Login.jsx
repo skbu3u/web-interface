@@ -3,7 +3,7 @@ import { useNavigate } from "react-router"
 import logo from './sz.svg';
 import { LockClosedIcon } from '@heroicons/react/solid'
 import axios from "axios";
-import { setToken } from "./Auth"
+import { setToken,setNewuser} from "./Auth"
 import { ToastContainer, toast } from 'react-toastify';
 import { injectStyle } from "react-toastify/dist/inject-style"
 
@@ -61,7 +61,7 @@ export default function Login (props) {
           console.log(response.data.token,'response.data.token')
           if(response.data.token){
             setToken(response.data.token)
-            // setNewuser(response.data.name)
+            setNewuser(response.data.name)
             console.log(response.data)
             window.location.reload()
           }

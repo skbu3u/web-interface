@@ -4,17 +4,17 @@ export const setToken = (token)=>{
     localStorage.setItem('temitope', token)
 }
 
-// export const setNewuser = (msg)=>{
-//     localStorage.setItem('Username', msg)
-// }
+export const setNewuser = (msg)=>{
+    localStorage.setItem('Username', msg)
+}
 
 export const fetchToken = (token)=>{
     return localStorage.getItem('temitope')
 }
 
-// export const getName = (token)=>{
-//     return localStorage.getItem('Username')
-// }
+export const getName = (token)=>{
+    return localStorage.getItem('Username')
+}
 
 export function RequireToken({children}){
     let auth = fetchToken()
