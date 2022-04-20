@@ -1,6 +1,10 @@
 {
   "short_name": "Web Interface",
+<<<<<<< HEAD
   "name": "React Web Interface",
+=======
+  "name": "Create React Web Interface",
+>>>>>>> c4c4c0e0575e4fe3910c62f21c7fa865f0eb601b
   "icons": [
     {
       "src": "favicon.ico",
