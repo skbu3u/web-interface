@@ -1,0 +1,9 @@
+# /node_modules/* and /bower_components/* ignored by default
+
+# Ignore built files except build/index.js
+build/*
+!build/index.js
+tailwind.config.js
+src/App.test.js
+src/setupTests.js
+src/index.css

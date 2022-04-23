@@ -1,33 +1,23 @@
-import React, { useState } from "react";
-import Login from "./components/Login/Login";
-import Home from "./components/Home/Home";
-import {MainHeader} from "../src/components/Login/MainHeader"
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Login from './components/Login/Login';
+import Layout from './components/Layout/Layout';
 
+export const setToken = (token) => {
+  localStorage.setItem('temitope', token);
+};
+
+export const fetchToken = () => localStorage.getItem('temitope');
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const auth = fetchToken();
 
-  // useEffect(() => {
-  //   const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
-  //   if (storedUserLoggedInInformation === "1") setIsLoggedIn(true);
-  // }, []);
-
-  const loginHandler = (email, password) => {
-    localStorage.setItem("isLoggedIn", "1");
-    setIsLoggedIn(true);
-  };
-
-  const logoutHandler = () => {
-    localStorage.removeItem("isLoggedIn");
-    setIsLoggedIn(false);
-  };
   return (
-    <>
-      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+    <Router>
       <main>
-        {!isLoggedIn && <Login onLogin={loginHandler} />}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
+        {!auth && <Login />}
+        {auth && <Layout />}
       </main>
-    </>
+    </Router>
   );
 }
 
