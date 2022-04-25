@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { injectStyle } from 'react-toastify/dist/inject-style';
 import ConsumablesToastContainer, { ConsumablesButton, ConsumablesSearch } from './ConsumablesData';
-import ModalAddParts from '../../UI/ModalAddParts/ModalAddParts';
 import { API_CONSUM_GET, API_SEARCH_CONSUMABLES } from '../../Apiconst/apiConstants';
 import ConsumablesTable from './ConsumablesTable';
+import ModalAddCons from '../../UI/ModalAddCons/ModalAddCons';
 
 export default function PartsPage() {
   const [userdata, setUserData] = useState([]);
@@ -33,7 +33,7 @@ export default function PartsPage() {
               <ConsumablesSearch query={query} setQuery={setQuery} />
               <div>
                 <ConsumablesButton open={open} setOpen={setOpen} />
-                <ModalAddParts open={open} setOpen={setOpen} />
+                <ModalAddCons open={open} setOpen={setOpen} />
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function PartsPage() {
               <ConsumablesSearch query={query} setQuery={setQuery} />
               <div>
                 <ConsumablesButton open={open} setOpen={setOpen} />
-                <ModalAddParts open={open} setOpen={setOpen} />
+                <ModalAddCons open={open} setOpen={setOpen} />
               </div>
             </div>
           </div>
