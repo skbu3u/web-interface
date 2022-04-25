@@ -1,7 +1,3 @@
-/* eslint-disable no-bitwise */
-/* eslint linebreak-style: ["error", "windows"] */
-/* jslint bitwise: true */
-
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { setToken, setNewuser } from './Auth';
@@ -19,7 +15,7 @@ const notify = () => toast.error('Неверный логин или парол�
 
 function Apilogin({ name, password }) {
   // eslint-disable-next-line no-empty
-  if ((name === '') & (password === '')) {} else {
+  if ((name === '') && (password === '')) {} else {
     axios
       .post(API_BASE_LOGIN, {
         name,
